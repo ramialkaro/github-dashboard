@@ -1,6 +1,6 @@
 import React from 'react';
 import { useTheme } from '@material-ui/core/styles';
-import { LineChart, Line, XAxis, YAxis, Label, ResponsiveContainer } from 'recharts';
+import { LineChart, Line, XAxis, YAxis, Label, ResponsiveContainer, CartesianGrid } from 'recharts';
 import Title from './Title';
 
 // Generate Sales Data
@@ -10,13 +10,13 @@ function createData(time, amount) {
 
 const data = [
   createData('00:00', 0),
-  createData('03:00', 300),
-  createData('06:00', 600),
-  createData('09:00', 800),
-  createData('12:00', 1500),
-  createData('15:00', 2000),
-  createData('18:00', 2400),
-  createData('21:00', 2400),
+  createData('03:00', 3),
+  createData('06:00', 7),
+  createData('09:00', 15),
+  createData('12:00', 11),
+  createData('15:00', 19),
+  createData('18:00', 20),
+  createData('21:00', 27),
   createData('24:00', undefined),
 ];
 
@@ -25,7 +25,7 @@ export default function Chart() {
 
   return (
     <React.Fragment>
-      <Title>Today</Title>
+      <Title>24 hours activity</Title>
       <ResponsiveContainer>
         <LineChart
           data={data}
@@ -43,10 +43,11 @@ export default function Chart() {
               position="left"
               style={{ textAnchor: 'middle', fill: theme.palette.text.primary }}
             >
-              Sales ($)
+              commits
             </Label>
           </YAxis>
-          <Line type="monotone" dataKey="amount" stroke={theme.palette.primary.main} dot={false} />
+          <Line type="monotone" dataKey="amount" stroke={theme.palette.primary.main} dot={true} />
+          <CartesianGrid stroke="#ccc" strokeDasharray="5 5" />
         </LineChart>
       </ResponsiveContainer>
     </React.Fragment>

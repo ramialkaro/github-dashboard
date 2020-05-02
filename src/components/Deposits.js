@@ -8,26 +8,27 @@ function preventDefault(event) {
   event.preventDefault();
 }
 
-const useStyles = makeStyles({
+const useStyles = makeStyles((theme)=>({
   depositContext: {
     flex: 1,
+    marginTop:theme.spacing(4)
   },
-});
+}));
 
 export default function Deposits() {
   const classes = useStyles();
   return (
     <React.Fragment>
-      <Title>Recent Deposits</Title>
+      <Title>You have </Title>
       <Typography component="p" variant="h4">
-        $3,024.00
+        25 repo
       </Typography>
       <Typography color="textSecondary" className={classes.depositContext}>
-        on 15 March, 2019
+        last one on 15 March, 2019
       </Typography>
       <div>
         <Link color="primary" href="#" onClick={preventDefault}>
-          View balance
+          View your account
         </Link>
       </div>
     </React.Fragment>

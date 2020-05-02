@@ -4,14 +4,20 @@ import ListItemIcon from '@material-ui/core/ListItemIcon';
 import ListItemText from '@material-ui/core/ListItemText';
 import ListSubheader from '@material-ui/core/ListSubheader';
 import DashboardIcon from '@material-ui/icons/Dashboard';
-import ShoppingCartIcon from '@material-ui/icons/ShoppingCart';
 import PeopleIcon from '@material-ui/icons/People';
 import BarChartIcon from '@material-ui/icons/BarChart';
-import LayersIcon from '@material-ui/icons/Layers';
 import AssignmentIcon from '@material-ui/icons/Assignment';
+import AccountCircleIcon from '@material-ui/icons/AccountCircle';
+import GroupAddIcon from '@material-ui/icons/GroupAdd';
 
 export const mainListItems = (
   <div>
+    <ListItem button>
+      <ListItemIcon>
+        <AccountCircleIcon />
+      </ListItemIcon>
+      <ListItemText primary="User Name" />
+    </ListItem>
     <ListItem button>
       <ListItemIcon>
         <DashboardIcon />
@@ -20,28 +26,28 @@ export const mainListItems = (
     </ListItem>
     <ListItem button>
       <ListItemIcon>
-        <ShoppingCartIcon />
+        <GroupAddIcon />
       </ListItemIcon>
-      <ListItemText primary="Orders" />
+      <ListItemText primary="Followers" />
     </ListItem>
     <ListItem button>
       <ListItemIcon>
         <PeopleIcon />
       </ListItemIcon>
-      <ListItemText primary="Customers" />
+      <ListItemText primary="Following" />
     </ListItem>
     <ListItem button>
       <ListItemIcon>
         <BarChartIcon />
       </ListItemIcon>
-      <ListItemText primary="Reports" />
+      <ListItemText primary="Chart" />
     </ListItem>
-    <ListItem button>
+    {/*  <ListItem button>
       <ListItemIcon>
         <LayersIcon />
       </ListItemIcon>
       <ListItemText primary="Integrations" />
-    </ListItem>
+    </ListItem> */}
   </div>
 );
 
