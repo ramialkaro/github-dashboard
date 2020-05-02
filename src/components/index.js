@@ -19,8 +19,8 @@ import MenuIcon from '@material-ui/icons/Menu';
 import ChevronLeftIcon from '@material-ui/icons/ChevronLeft';
 import { mainListItems, secondaryListItems } from './listItems';
 import Chart from './Chart';
-import Deposits from './Deposits';
-import Orders from './Orders';
+import CalcRepos from './CalcRepos';
+import Repos from './Repos';
 
 function Copyright() {
   return (
@@ -174,16 +174,16 @@ export default function DashBoard() {
                 <Chart />
               </Paper>
             </Grid>
-            {/* Recent Deposits */}
+            {/* Recent CalcRepos */}
             <Grid item xs={12} md={4} lg={3}>
               <Paper className={fixedHeightPaper}>
-                <Deposits />
+                <CalcRepos />
               </Paper>
             </Grid>
-            {/* Recent Orders */}
+            {/* Recent Repos */}
             <Grid item xs={12}>
               <Paper className={classes.paper}>
-                <Orders />
+                <Repos />
               </Paper>
             </Grid>
           </Grid>

@@ -15,7 +15,7 @@ const useStyles = makeStyles((theme)=>({
   },
 }));
 
-export default function Deposits() {
+export default function CalcRepos() {
   const classes = useStyles();
   return (
     <React.Fragment>

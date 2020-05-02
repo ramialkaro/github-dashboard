@@ -31,7 +31,7 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-export default function Orders() {
+export default function Repos() {
   const classes = useStyles();
   return (
     <React.Fragment>
