@@ -1,20 +1,18 @@
 import React from 'react';
-import ListItem from '@material-ui/core/ListItem';
-import ListItemIcon from '@material-ui/core/ListItemIcon';
-import ListItemText from '@material-ui/core/ListItemText';
-import ListSubheader from '@material-ui/core/ListSubheader';
 import DashboardIcon from '@material-ui/icons/Dashboard';
 import PeopleIcon from '@material-ui/icons/People';
 import BarChartIcon from '@material-ui/icons/BarChart';
 import AssignmentIcon from '@material-ui/icons/Assignment';
 import AccountCircleIcon from '@material-ui/icons/AccountCircle';
 import GroupAddIcon from '@material-ui/icons/GroupAdd';
+import GitHubIcon from '@material-ui/icons/GitHub';
+import { Divider, ListItem, ListItemIcon, ListItemText, ListSubheader,  } from '@material-ui/core';
 
-export const mainListItems= (user) => (
+export const mainListItems = (user) => (
   <div>
     <ListItem button>
       <ListItemIcon>
-        <AccountCircleIcon />
+        <AccountCircleIcon color="secondary" />
       </ListItemIcon>
       <ListItemText primary={`${user}`} />
     </ListItem>
@@ -42,12 +40,13 @@ export const mainListItems= (user) => (
       </ListItemIcon>
       <ListItemText primary="Chart" />
     </ListItem>
-    {/*  <ListItem button>
+    <Divider style={{marginLeft:'1rem', marginRight:'1rem'}}/>
+    <ListItem button>
       <ListItemIcon>
-        <LayersIcon />
+        <GitHubIcon />
       </ListItemIcon>
-      <ListItemText primary="Integrations" />
-    </ListItem> */}
+      <ListItemText primary="change user" />
+    </ListItem>
   </div>
 );
 
