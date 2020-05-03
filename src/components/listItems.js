@@ -10,13 +10,13 @@ import AssignmentIcon from '@material-ui/icons/Assignment';
 import AccountCircleIcon from '@material-ui/icons/AccountCircle';
 import GroupAddIcon from '@material-ui/icons/GroupAdd';
 
-export const mainListItems = (
+export const mainListItems= (user) => (
   <div>
     <ListItem button>
       <ListItemIcon>
         <AccountCircleIcon />
       </ListItemIcon>
-      <ListItemText primary="User Name" />
+      <ListItemText primary={`${user}`} />
     </ListItem>
     <ListItem button>
       <ListItemIcon>
