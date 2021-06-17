@@ -120,7 +120,7 @@ const useStyles = makeStyles((theme) => ({
 export default function DashBoard() {
   const classes = useStyles();
   const [open, setOpen] = React.useState(true);
-  const [user, setUser] = React.useState('ramialkaro')
+  const user = 'ramialkaro'
 
   const handleDrawerOpen = () => {
     setOpen(true);
