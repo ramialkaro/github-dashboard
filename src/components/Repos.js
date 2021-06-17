@@ -3,12 +3,14 @@ import Link from '@material-ui/core/Link';
 import { makeStyles } from '@material-ui/core/styles';
 import { withStyles } from '@material-ui/core/styles';
 import { green } from '@material-ui/core/colors';
-import { Table, TableBody, TableCell, TableHead, TableRow } from '@material-ui/core';
+import { IconButton, Table, TableBody, TableCell, TableHead, TableRow } from '@material-ui/core';
 import Title from './Title';
 import FetchData from './FetchData';
 import { formatZonedDate } from '../utils';
 import FormControlLabel from '@material-ui/core/FormControlLabel';
 import Checkbox from '@material-ui/core/Checkbox';
+import FileCopyIcon from '@material-ui/icons/FileCopy';
+
 function preventDefault(event) {
   event.preventDefault();
 }
@@ -38,8 +40,10 @@ export default function Repos() {
     if (a.created_at > b.created_at) return -1;
     else return 0;
   });
-  console.log(data);
 
+  const cloneRepo = gitUrl => {
+    navigator.clipboard.writeText(gitUrl);
+  };
   return (
     <React.Fragment>
       <Title>5 Recent Repos</Title>
@@ -53,11 +57,12 @@ export default function Repos() {
             <TableCell>Branch</TableCell>
             <TableCell>Owner</TableCell>
             <TableCell>language</TableCell>
-            <TableCell align="right">Wiki</TableCell>
+            <TableCell>Wiki</TableCell>
+            <TableCell align="right">Clone</TableCell>
           </TableRow>
         </TableHead>
         <TableBody>
-          {data.slice(0, 5).map(({ id, created_at, name, default_branch, owner, language, has_wiki }, index) => (
+          {data.slice(0, 5).map(({ id, created_at, name, default_branch, owner, language, has_wiki, git_url }, index) => (
             <TableRow key={id}>
               <TableCell>{index + 1}</TableCell>
               <TableCell>{id}</TableCell>
@@ -66,8 +71,13 @@ export default function Repos() {
               <TableCell>{default_branch}</TableCell>
               <TableCell>{owner.login}</TableCell>
               <TableCell>{language}</TableCell>
-              <TableCell align="right">
+              <TableCell>
                 <FormControlLabel control={<GreenCheckbox checked={has_wiki} />} />
+              </TableCell>
+              <TableCell align="right">
+                <IconButton aria-label="clone" onClick={() => cloneRepo(git_url)}>
+                  <FileCopyIcon />
+                </IconButton>
               </TableCell>
             </TableRow>
           ))}
