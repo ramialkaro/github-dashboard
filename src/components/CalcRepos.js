@@ -5,6 +5,8 @@ import Typography from '@material-ui/core/Typography';
 import Title from './Title';
 import FetchData from './FetchData'
 import CountUp from 'react-countup';
+import {formatZonedDate} from "../utils"
+
 
 function preventDefault(event) {
   event.preventDefault();
@@ -33,7 +35,7 @@ export default function CalcRepos() {
         {<CountUp start={0} end={data.length} duration={2.75} />} public repo
       </Typography>
       <Typography color="textSecondary" className={classes.depositContext}>
-        last created repo on {data[0] !== undefined ? data[0].created_at : null}
+        Last repo at {data[0] !== undefined ? formatZonedDate(data[0].created_at) : null}
       </Typography>
       <div>
         <Link color="primary" href="#" onClick={preventDefault}>
