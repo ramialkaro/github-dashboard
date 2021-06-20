@@ -1,44 +1,39 @@
 import React from 'react';
-import Link from '@material-ui/core/Link';
-import { makeStyles } from '@material-ui/core/styles';
-import Typography from '@material-ui/core/Typography';
-import Title from './Title';
-import FetchData from './FetchData'
 import CountUp from 'react-countup';
-import {formatZonedDate} from "../utils"
+import { Link, Typography } from '@material-ui/core';
+import { makeStyles } from '@material-ui/core/styles';
+import Title from './Title';
+import FetchData from './FetchData';
+import { formatZonedDate } from '../utils';
+import { BASE_URL, REPOS_URL } from '../constants';
 
-
-function preventDefault(event) {
-  event.preventDefault();
-}
-
-const useStyles = makeStyles((theme) => ({
+const useStyles = makeStyles(theme => ({
   depositContext: {
     flex: 1,
-    marginTop: theme.spacing(4)
+    marginTop: theme.spacing(4),
   },
 }));
 
 export default function CalcRepos() {
   const classes = useStyles();
-  const { data } = FetchData('https://api.github.com/users/ramialkaro/repos')
+  const { data } = FetchData(REPOS_URL);
   data.sort((a, b) => {
-    if (a.created_at < b.created_at) return 1
-    if (a.created_at > b.created_at) return -1
-    else return 0
-  })
+    if (a.created_at < b.created_at) return 1;
+    if (a.created_at > b.created_at) return -1;
+    else return 0;
+  });
 
   return (
     <React.Fragment>
       <Title>You have </Title>
       <Typography component="p" variant="h4">
-        {<CountUp start={0} end={data.length} duration={2.75} />} public repo
+        {<CountUp start={0} end={data.length} duration={2.75} />} public repository
       </Typography>
       <Typography color="textSecondary" className={classes.depositContext}>
-        Last repo at {data[0] !== undefined ? formatZonedDate(data[0].created_at) : null}
+        Last created at {data[0] !== undefined ? formatZonedDate(data[0].created_at) : null}
       </Typography>
       <div>
-        <Link color="primary" href="#" onClick={preventDefault}>
+        <Link color="primary" href={BASE_URL}>
           View your account
         </Link>
       </div>

@@ -2,14 +2,12 @@ import React, { useState } from 'react';
 import { makeStyles } from '@material-ui/core/styles';
 import { withStyles } from '@material-ui/core/styles';
 import { green } from '@material-ui/core/colors';
-import { IconButton, Table, TableBody, TableCell, TableHead, TableRow, Typography } from '@material-ui/core';
+import { IconButton, Table, TableBody, TableCell, TableHead, TableRow, Typography, FormControlLabel,  Checkbox } from '@material-ui/core';
 import Title from './Title';
 import FetchData from './FetchData';
-import { formatZonedDate } from '../utils';
-import FormControlLabel from '@material-ui/core/FormControlLabel';
-import Checkbox from '@material-ui/core/Checkbox';
 import FileCopyIcon from '@material-ui/icons/FileCopy';
-
+import { REPOS_URL } from '../constants';
+import { formatZonedDate } from '../utils';
 
 const useStyles = makeStyles(theme => ({
   seeMore: {
@@ -30,7 +28,7 @@ const GreenCheckbox = withStyles({
 
 export default function Repos() {
   const classes = useStyles();
-  const { data } = FetchData('https://api.github.com/users/ramialkaro/repos');
+  const { data } = FetchData(REPOS_URL);
   const [repoAmount, setRepoAmount] = useState(5);
 
   data.sort((a, b) => {
