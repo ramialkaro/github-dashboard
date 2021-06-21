@@ -14,12 +14,13 @@ import { mainListItems } from './listItems';
 import Chart from './Chart';
 import CalcRepos from './CalcRepos';
 import Repos from './Repos';
+import { DEVELOPER_ACCOUNT } from '../constants';
 
 function Copyright() {
   return (
     <Typography variant="body2" color="textSecondary" align="center">
       {'Copyright © '}
-      <Link color="inherit" href="https://material-ui.com/">
+      <Link color="inherit" href={DEVELOPER_ACCOUNT}>
         Rami Al-Karo
       </Link>{' '}
       {new Date().getFullYear()}
