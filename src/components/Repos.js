@@ -4,7 +4,7 @@ import { withStyles } from '@material-ui/core/styles';
 import { green } from '@material-ui/core/colors';
 import { IconButton, Table, TableBody, TableCell, TableHead, TableRow, Typography, FormControlLabel,  Checkbox } from '@material-ui/core';
 import Title from './Title';
-import FetchData from './FetchData';
+import FetchData from '../FetchData';
 import FileCopyIcon from '@material-ui/icons/FileCopy';
 import { REPOS_URL } from '../constants';
 import { formatZonedDate } from '../utils';
