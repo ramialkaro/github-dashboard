@@ -5,9 +5,10 @@ import BarChartIcon from '@material-ui/icons/BarChart';
 import AssignmentIcon from '@material-ui/icons/Assignment';
 import AccountCircleIcon from '@material-ui/icons/AccountCircle';
 import GroupAddIcon from '@material-ui/icons/GroupAdd';
-import { ListItem, ListItemIcon, ListItemText, ListSubheader,  } from '@material-ui/core';
+import { ListItem, ListItemIcon, ListItemText, ListSubheader } from '@material-ui/core';
+import { Link } from 'react-router-dom';
 
-export const mainListItems = (user) => (
+export const mainListItems = user => (
   <div>
     <ListItem button>
       <ListItemIcon>
@@ -15,19 +16,19 @@ export const mainListItems = (user) => (
       </ListItemIcon>
       <ListItemText primary={`${user}`} />
     </ListItem>
-    <ListItem button>
+    <ListItem component={Link} to="/">
       <ListItemIcon>
         <DashboardIcon />
       </ListItemIcon>
       <ListItemText primary="Dashboard" />
     </ListItem>
-    <ListItem button>
+    <ListItem component={Link} to="/followers">
       <ListItemIcon>
         <GroupAddIcon />
       </ListItemIcon>
       <ListItemText primary="Followers" />
     </ListItem>
-    <ListItem button>
+    <ListItem component={Link} to="/following">
       <ListItemIcon>
         <PeopleIcon />
       </ListItemIcon>
@@ -39,7 +40,6 @@ export const mainListItems = (user) => (
       </ListItemIcon>
       <ListItemText primary="Chart" />
     </ListItem>
-   
   </div>
 );
 

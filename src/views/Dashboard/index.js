@@ -2,34 +2,14 @@ import React from 'react';
 import clsx from 'clsx';
 import { makeStyles } from '@material-ui/core/styles';
 import CssBaseline from '@material-ui/core/CssBaseline';
-import Drawer from '@material-ui/core/Drawer';
-import Box from '@material-ui/core/Box';
-import List from '@material-ui/core/List';
-import Typography from '@material-ui/core/Typography';
-import Container from '@material-ui/core/Container';
-import Grid from '@material-ui/core/Grid';
-import Paper from '@material-ui/core/Paper';
-import Link from '@material-ui/core/Link';
-import { mainListItems } from './listItems';
-import Chart from './Chart';
-import CalcRepos from './CalcRepos';
-import Repos from './Repos';
-import { DEVELOPER_ACCOUNT } from '../constants';
+import { Grid, Paper, Container, List, Drawer, Box } from '@material-ui/core';
+import { mainListItems } from '../../components/listItems';
+import Chart from '../../components/Chart';
+import CalcRepos from '../../components/CalcRepos';
+import Copyright from '../../components/Copyright';
+import Repos from '../../components/Repos';
+import { OWNER, DRAWER_WIDTH } from '../../constants';
 
-function Copyright() {
-  return (
-    <Typography variant="body2" color="textSecondary" align="center">
-      {'Copyright © '}
-      <Link color="inherit" href={DEVELOPER_ACCOUNT}>
-        Rami Al-Karo
-      </Link>{' '}
-      {new Date().getFullYear()}
-      {'.'}
-    </Typography>
-  );
-}
-
-const drawerWidth = 240;
 
 const useStyles = makeStyles(theme => ({
   root: {
@@ -53,8 +33,8 @@ const useStyles = makeStyles(theme => ({
     }),
   },
   appBarShift: {
-    marginLeft: drawerWidth,
-    width: `calc(100% - ${drawerWidth}px)`,
+    marginLeft: DRAWER_WIDTH,
+    width: `calc(100% - ${DRAWER_WIDTH}px)`,
     transition: theme.transitions.create(['width', 'margin'], {
       easing: theme.transitions.easing.sharp,
       duration: theme.transitions.duration.enteringScreen,
@@ -74,7 +54,7 @@ const useStyles = makeStyles(theme => ({
   drawerPaper: {
     position: 'relative',
     whiteSpace: 'nowrap',
-    width: drawerWidth,
+    width: DRAWER_WIDTH,
     transition: theme.transitions.create('width', {
       easing: theme.transitions.easing.sharp,
       duration: theme.transitions.duration.enteringScreen,
@@ -115,8 +95,6 @@ const useStyles = makeStyles(theme => ({
 export default function DashBoard() {
   const classes = useStyles();
   const open = false;
-  const user = 'ramialkaro';
-
   const fixedHeightPaper = clsx(classes.paper, classes.fixedHeight);
 
   return (
@@ -130,13 +108,11 @@ export default function DashBoard() {
         }}
         open={open}
       >
-        <List>{mainListItems(user)}</List>
-        {/* <Divider />
-        <List>{secondaryListItems}</List> */}
+        <List>{mainListItems(OWNER)}</List>
       </Drawer>
       <main className={classes.content}>
         <div className={classes.appBarSpacer} />
-        <Container maxWidth="lg" className={classes.container}>
+        <Container maxWidth="xl" className={classes.container}>
           <Grid container spacing={1}>
             {/* Chart */}
             <Grid item xs={12} md={8} lg={9}>

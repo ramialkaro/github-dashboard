@@ -27,7 +27,7 @@ const useStyles = makeStyles(theme => ({
     },
   },
 }));
-const Followers = () => {
+const Following = () => {
   const classes = useStyles();
   const open = false;
 
@@ -43,4 +43,5 @@ const Followers = () => {
     </Drawer>
   );
 };
-export default Followers
+
+export default Following;

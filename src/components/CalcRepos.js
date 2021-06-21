@@ -2,7 +2,6 @@ import React from 'react';
 import CountUp from 'react-countup';
 import { Link, Typography } from '@material-ui/core';
 import { makeStyles } from '@material-ui/core/styles';
-import Title from './Title';
 import FetchData from '../FetchData';
 import { formatZonedDate } from '../utils';
 import { OWNER_ACCOUNT, REPOS_URL } from '../constants';
@@ -25,8 +24,7 @@ export default function CalcRepos() {
 
   return (
     <React.Fragment>
-      <Title>You have </Title>
-      <Typography component="p" variant="h4">
+      <Typography component="p" variant="h5">
         {<CountUp start={0} end={data.length} duration={2.75} />} public repository
       </Typography>
       <Typography color="textSecondary" className={classes.depositContext}>

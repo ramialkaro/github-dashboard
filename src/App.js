@@ -1,6 +1,6 @@
 import React from 'react';
 import './App.css';
-import DashBoard from './components';
+import Routes from './routes';
 import { MuiThemeProvider } from '@material-ui/core/styles';
 import {theme} from './global-style'
 function App() {
@@ -9,7 +9,7 @@ function App() {
   return (
     <MuiThemeProvider theme={theme}>
       <div className="App">
-        <DashBoard />
+        <Routes />
       </div>
     </MuiThemeProvider>
   );
