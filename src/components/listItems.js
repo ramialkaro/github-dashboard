@@ -5,8 +5,7 @@ import BarChartIcon from '@material-ui/icons/BarChart';
 import AssignmentIcon from '@material-ui/icons/Assignment';
 import AccountCircleIcon from '@material-ui/icons/AccountCircle';
 import GroupAddIcon from '@material-ui/icons/GroupAdd';
-import GitHubIcon from '@material-ui/icons/GitHub';
-import { Divider, ListItem, ListItemIcon, ListItemText, ListSubheader,  } from '@material-ui/core';
+import { ListItem, ListItemIcon, ListItemText, ListSubheader,  } from '@material-ui/core';
 
 export const mainListItems = (user) => (
   <div>
@@ -40,13 +39,7 @@ export const mainListItems = (user) => (
       </ListItemIcon>
       <ListItemText primary="Chart" />
     </ListItem>
-    <Divider style={{marginLeft:'1rem', marginRight:'1rem'}}/>
-    <ListItem button>
-      <ListItemIcon>
-        <GitHubIcon />
-      </ListItemIcon>
-      <ListItemText primary="change user" />
-    </ListItem>
+   
   </div>
 );
 
