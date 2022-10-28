@@ -2,13 +2,12 @@ import React from 'react';
 import clsx from 'clsx';
 import { makeStyles } from '@material-ui/core/styles';
 import CssBaseline from '@material-ui/core/CssBaseline';
-import { Grid, Paper, Container, List, Box } from '@material-ui/core';
-import { mainListItems } from '../../components/listItems';
+import { Grid, Paper, Container, Box } from '@material-ui/core';
 import Chart from '../../components/Chart';
 import CalcRepos from '../../components/CalcRepos';
 import Copyright from '../../components/Copyright';
 import Repos from '../../components/Repos';
-import { OWNER, DRAWER_WIDTH } from '../../constants';
+import { DRAWER_WIDTH } from '../../constants';
 
 
 const useStyles = makeStyles(theme => ({
