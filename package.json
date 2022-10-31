@@ -10,7 +10,7 @@
     "@testing-library/user-event": "^7.2.1",
     "axios": "^0.21.1",
     "http": "0.0.1-security",
-    "moment": "^2.25.1",
+    "moment": "^2.29.4",
     "react": "^16.13.1",
     "react-countup": "^4.3.3",
     "react-dom": "^16.13.1",
