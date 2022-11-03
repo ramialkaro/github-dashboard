@@ -1,7 +1,5 @@
 import React, { useState } from 'react';
 import { makeStyles } from '@material-ui/core/styles';
-import { withStyles } from '@material-ui/core/styles';
-import { green } from '@material-ui/core/colors';
 import { IconButton, Table, TableBody, TableCell, TableHead, TableRow, Typography, FormControlLabel,  Checkbox } from '@material-ui/core';
 import Title from './Title';
 import FetchData from '../FetchData';
@@ -15,16 +13,6 @@ const useStyles = makeStyles(theme => ({
     cursor: 'pointer',
   },
 }));
-
-const GreenCheckbox = withStyles({
-  root: {
-    color: green[400],
-    '&$checked': {
-      color: green[600],
-    },
-  },
-  checked: {},
-})(props => <Checkbox color="default" {...props} />);
 
 export default function Repos() {
   const classes = useStyles();
@@ -73,10 +61,10 @@ export default function Repos() {
               <TableCell>{owner.login}</TableCell>
               <TableCell>{language}</TableCell>
               <TableCell>
-                <FormControlLabel control={<GreenCheckbox checked={has_wiki} />} />
+                <FormControlLabel control={<Checkbox disabled checked={has_wiki} />} />
               </TableCell>
               <TableCell align="right">
-                <IconButton aria-label="clone" onClick={() => cloneRepo(git_url)}>
+                <IconButton aria-label="clone" color="secondary" onClick={() => cloneRepo(git_url)}>
                   <FileCopyIcon />
                 </IconButton>
               </TableCell>

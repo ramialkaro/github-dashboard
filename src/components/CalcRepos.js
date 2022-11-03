@@ -4,7 +4,7 @@ import { Link, Typography } from '@material-ui/core';
 import { makeStyles } from '@material-ui/core/styles';
 import FetchData from '../FetchData';
 import { formatZonedDate } from '../utils';
-import { OWNER_ACCOUNT, REPOS_URL } from '../constants';
+import { OWNER_ACCOUNT, REPOS_URL, OWNER } from '../constants';
 
 const useStyles = makeStyles(theme => ({
   depositContext: {
@@ -32,7 +32,7 @@ export default function CalcRepos() {
       </Typography>
       <div>
         <Link color="primary" href={OWNER_ACCOUNT}>
-          View your account
+          View own account <span> @{OWNER}</span>
         </Link>
       </div>
     </React.Fragment>

@@ -85,21 +85,21 @@ export default function DashBoard() {
           <Grid container spacing={1}>
             {/* Chart */}
             <Grid item xs={12} md={8} lg={9}>
-              <Paper className={fixedHeightPaper}>
+              <div className={fixedHeightPaper}>
                 <Chart />
-              </Paper>
+              </div>
             </Grid>
             {/* Recent CalcRepos */}
             <Grid item xs={12} md={4} lg={3}>
-              <Paper className={fixedHeightPaper}>
+              <div className={fixedHeightPaper}>
                 <CalcRepos />
-              </Paper>
+              </div>
             </Grid>
             {/* Recent Repos */}
             <Grid item xs={12}>
-              <Paper className={classes.paper}>
+              <div className={classes.paper}>
                 <Repos />
-              </Paper>
+              </div>
             </Grid>
           </Grid>
           <Box pt={4}>

@@ -6,18 +6,21 @@ export const theme = createMuiTheme({
         type: 'dark',
         primary: {
             light: '#ffb74d',
-            main: '#ff9800',
+            main: '#ff79c6',
             dark: '#f57c00',
             contrastText: '#fff',
         },
         secondary: {
-            light: '#33eb91',
-            main: '#00e676',
-            dark: '#00a152',
+            light: '#bd93f9',
+            main: '#bd93f9',
+            dark: '#bd93f9',
             contrastText: '#000',
         },
         contrastThreshold: 3,
         tonalOffset: 0.2,
+        background: {
+            default: '#282a36',
+        }
         
     },
     typography: { useNextVariants: true },
