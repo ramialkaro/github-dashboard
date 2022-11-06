@@ -17,3 +17,9 @@ const Routes = () => {
 };
 
 export default Routes;
+
+/**
+ * TODO: consider TS
+ * TODO: unit testing
+ * TODO: check if there new router features in the react router dom
+ */

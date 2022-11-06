@@ -16,3 +16,11 @@ function App() {
 }
 
 export default App;
+
+/**
+ * TODO: consider TS
+ * TODO: unit testing
+ * TODO: consider state managment instead of props passing
+ * FIXME:
+ * HACK:
+ */

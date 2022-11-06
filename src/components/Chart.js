@@ -1,11 +1,11 @@
 import React from 'react';
-import { useTheme } from '@material-ui/core/styles';
-import { LineChart, Line, XAxis, YAxis, Label, ResponsiveContainer, CartesianGrid } from 'recharts';
+import {useTheme} from '@material-ui/core/styles';
+import {LineChart, Line, XAxis, YAxis, Label, ResponsiveContainer, CartesianGrid} from 'recharts';
 import Title from './Title';
 
 // Generate Sales Data
 function createData(time, amount) {
-  return { time, amount };
+  return {time, amount};
 }
 
 const data = [
@@ -41,7 +41,7 @@ export default function Chart() {
             <Label
               angle={270}
               position="left"
-              style={{ textAnchor: 'middle', fill: theme.palette.text.primary }}
+              style={{textAnchor: 'middle', fill: theme.palette.text.primary}}
             >
               commits
             </Label>
@@ -53,3 +53,15 @@ export default function Chart() {
     </React.Fragment>
   );
 }
+
+/**
+ * TODO: consider TS
+ * TODO: unit testing
+ * TODO: replace dummy data with actully commit history from github.
+ * TODO: linechart, move inline margin object to own object.
+ * TODO: remove inline styles
+ * TOOD: make linechart more dynamic if there is no 24h commit, give other options such as 1w, 2w, 1m, 2m, 1y, or nothing.
+ * TODO: remove React.Fragment.
+ * TODO: rename data to something meanful.
+ * TODO:
+ */

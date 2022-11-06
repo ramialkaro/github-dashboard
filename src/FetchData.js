@@ -28,3 +28,9 @@ export default function FetchData(url) {
     error,
   };
 }
+
+/**
+ * TODO: consider TS
+ * TODO: unit testing
+ * TODO: 
+ */
