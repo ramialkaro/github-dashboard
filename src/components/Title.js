@@ -13,3 +13,9 @@ export default function Title(props) {
 Title.propTypes = {
   children: PropTypes.node,
 };
+
+/**
+ * TODO: consider TS
+ * TODO: unit testing
+ * TODO:
+ */

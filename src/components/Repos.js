@@ -1,13 +1,13 @@
-import React, { useState } from 'react';
-import { makeStyles } from '@material-ui/core/styles';
-import { IconButton, Table, TableBody, TableCell, TableHead, TableRow, Typography, FormControlLabel,  Checkbox } from '@material-ui/core';
+import React, {useState} from 'react';
+import {makeStyles} from '@material-ui/core/styles';
+import {IconButton, Table, TableBody, TableCell, TableHead, TableRow, Typography, FormControlLabel, Checkbox} from '@material-ui/core';
 import Title from './Title';
 import FetchData from '../FetchData';
 import FileCopyIcon from '@material-ui/icons/FileCopy';
-import { REPOS_URL } from '../constants';
-import { formatZonedDate } from '../utils';
+import {REPOS_URL} from '../constants';
+import {formatZonedDate} from '../utils/dateFormatter';
 
-const useStyles = makeStyles(theme => ({
+const useStyles = makeStyles((theme) => ({
   seeMore: {
     marginTop: theme.spacing(3),
     cursor: 'pointer',
@@ -16,7 +16,7 @@ const useStyles = makeStyles(theme => ({
 
 export default function Repos() {
   const classes = useStyles();
-  const { data } = FetchData(REPOS_URL);
+  const {data} = FetchData(REPOS_URL);
   const [repoAmount, setRepoAmount] = useState(5);
 
   data.sort((a, b) => {
@@ -25,7 +25,7 @@ export default function Repos() {
     else return 0;
   });
 
-  const cloneRepo = gitUrl => {
+  const cloneRepo = (gitUrl) => {
     navigator.clipboard.writeText(gitUrl);
   };
 
@@ -51,7 +51,7 @@ export default function Repos() {
           </TableRow>
         </TableHead>
         <TableBody>
-          {data.slice(0, repoAmount).map(({ id, created_at, name, default_branch, owner, language, has_wiki, git_url }, index) => (
+          {data.slice(0, repoAmount).map(({id, created_at, name, default_branch, owner, language, has_wiki, git_url}, index) => (
             <TableRow key={id}>
               <TableCell>{index + 1}</TableCell>
               <TableCell>{id}</TableCell>
@@ -78,3 +78,12 @@ export default function Repos() {
     </React.Fragment>
   );
 }
+
+
+/**
+ * TODO: consider TS
+ * TODO: unit testing
+ * TODO: rename data variable to something meanful
+ * TODO: make the 'load more repositories" button hide if there is nothing to load.
+ * TODO:
+ */

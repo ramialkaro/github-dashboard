@@ -45,3 +45,9 @@ const Following = () => {
 };
 
 export default Following;
+
+/**
+ * TODO: consider TS
+ * TODO: unit testing
+ * TODO: 
+ */

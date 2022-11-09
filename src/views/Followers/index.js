@@ -44,3 +44,9 @@ const Followers = () => {
   );
 };
 export default Followers
+
+/**
+ * TODO: consider TS
+ * TODO: unit testing
+ * TODO: 
+ */
