@@ -1,6 +1,6 @@
 import React from 'react';
-import {Typography, Link} from '@material-ui/core';
-import {DEVELOPER_ACCOUNT} from '../constants';
+import { Typography, Link } from '@material-ui/core';
+import { DEVELOPER_ACCOUNT } from '../constants';
 
 const Copyright = () => {
   return (
@@ -16,9 +16,3 @@ const Copyright = () => {
 };
 
 export default Copyright;
-
-/**
- * TODO: consider TS
- * TODO: unit testing
- * TODO:
- */
